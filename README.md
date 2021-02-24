@@ -27,3 +27,16 @@ Figure 3 shows the time series of theoretical, predicted and observed net radiat
 |:--:|
 |* Figure 3. Theoretical, Predicated, and Observed Net Radiation against using a Gradient Boosted Tree Model at one station in California*|
 
+Through the following code, we can make net radiation forecast based on the weather forecasting at the real time.
+
+'''{
+import nws_forecast
+from nws_forecast import forecast
+
+my_forecast = forecast(city="Merced, CA", model_type ='lm')
+my_forecast.request_nws()
+from class_model import model
+my_forecast.export_forecast()
+my_forecast.plot_forecast()
+print(my_forecast.model_id, my_forecast.pred_time)
+}'''
