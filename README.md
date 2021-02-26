@@ -39,6 +39,7 @@ Figure 2. Net radiation forecasting at Merced, CA
 <img src="./figs/fig_demo_03.png" alt="Theoretical, predicated, and observed net radiation against time at one location." width="300"/>
 Figure 3. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California.
 </p>
+> **SUGGESTION**: consider plotting 1:1 format for all sites.
 
 <p align="center">
 <img src="./figs/fig_demo_02.png" alt="The prediction against observation of net radiation." width="300"/>
