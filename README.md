@@ -1,42 +1,35 @@
-# Netrad
-This repository covers a series of machine-learning-based models that predict net radiation using minimum climatological data.
+# Machine-learning Based Net Radiation Forecaster 
 
-The model ID, input variables, and database used for model construction are shown in the table below.
+## Overview
+This repository was created for the machine-learning forecasters that predict net radiation using minimum weather information, e.g., temperature. It pulls data from the [National Weather Service (NWS) API](https://www.weather.gov/documentation/services-web-api) for customized location and forecasts the net radiation.
 
-| Model_ID       | Input Variables     | Database     |
-| :------------- | :-----------------: | -----------: |
-| rad            | rad_avg_W_sqm + rad_std_W_sqm + rad_max_W_sqm + day_len_hr + rad_tot_J_sqm | CA_CIMIS + AZ_AZMET |
-| rad_t          | rad_avg_W_sqm + rad_std_W_sqm + rad_max_W_sqm + day_len_hr + rad_tot_J_sqm  <br> T_max + T_min + T_avg + T_rng | CA_CIMIS + AZ_AZMET |
-| rad_t_yest     | rad_avg_W_sqm + rad_std_W_sqm + rad_max_W_sqm + day_len_hr + rad_tot_J_sqm  <br> T_max + T_min + T_avg + T_rng <br> T_max_yest + T_min_yest + T_avg_yest | CA_CIMIS + AZ_AZMET |
+## Features
+* The model built was based on five popular machine learning algorithms, including multi-linear regression, K nearest neighbor, support vector machine, random forests, and gradient boosted tree regression.
+* The dataset for model construction was collected from the [CIMIS](https://cimis.water.ca.gov/Default.aspx) and [AZMET](https://cals.arizona.edu/AZMET/) from 1982 to 2018.
+* Extracting [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) reanalysis global climate dataset for forecast validation.
+* Forecasting 7-day net radiation from the running date after automatically extracting weather forecasting information from NWS.
 
-A brief overview of the results is shown in the figures below. Figure 1 shows the observation stations where we collected the data.
+![Map of Radiation Stations](./figs/fig_demo_01.png =250x "Map of Radiation Station")
 
-|![Prediction against measurement](./figs/fig_demo_geo.png)|
-|:--:|
-|* Figure 1. Geographical Location and Elevation of Radiation Stations*|
+## Running The Forecaster
 
-Figure 2 shows the model performance using the prediction vs. observation plot. Here we only showed the results generated from gradient boosted tree models.
-
-|![Prediction against measurement](./figs/fig_demo_01.png)|
-|:--:|
-|* Figure 2. Predicted vs. Observed Net Radiation using a Gradient Boosted Tree Model*|
-
-Figure 3 shows the time series of theoretical, predicted and observed net radiation at one station in California.
-
-|![Prediction against measurement](./figs/fig_demo_03.png)|
-|:--:|
-|* Figure 3. Theoretical, Predicated, and Observed Net Radiation against using a Gradient Boosted Tree Model at one station in California*|
-
-Through the following code, we can make net radiation forecast based on the weather forecasting at the real time.
-
-'''{
+```
 import nws_forecast
 from nws_forecast import forecast
 
+# request weather forecast from NWS
 my_forecast = forecast(city="Merced, CA", model_type ='lm')
 my_forecast.request_nws()
+
+# proceed the forecast and plot the forecast results
 from class_model import model
 my_forecast.export_forecast()
 my_forecast.plot_forecast()
-print(my_forecast.model_id, my_forecast.pred_time)
-}'''
+```
+## Model Preview
+
+![Prediction against measurement](./figs/fig_demo_02.png =250x "Prediction against measurement using one model.")
+
+![Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one station in California](./figs/fig_demo_03.png =250x "Theoretical, predicated, and observed net radiation against time at one location.")
+
+![Net radiation forecasting at Merced, CA](./figs/fig_demo_04.png =250x "Net radiation forecasting at one location.")
