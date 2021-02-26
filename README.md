@@ -10,7 +10,7 @@ This repository was created for the machine-learning forecasters that predict ne
 * Forecasting 7-day net radiation from the running date after automatically extracting weather forecasting information from NWS.
 <p align="center">
 <img src="./figs/fig_demo_01.png" alt="Map of Radiation Stations" width=300 />
-Figure 1. Geographical location of observation location
+Figure 1. Geographical location of observation station
 </p>
 
 ## Running The Forecaster
@@ -37,12 +37,12 @@ Figure 2. Net radiation forecasting at Merced, CA
 
 <p align="center">
 <img src="./figs/fig_demo_03.png" alt="Theoretical, predicated, and observed net radiation against time at one location." width="300"/>
-Figure 3. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one station in California.
+Figure 3. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California.
 </p>
 
 <p align="center">
 <img src="./figs/fig_demo_02.png" alt="The prediction against observation of net radiation." width="300"/>
-Figure 4. Predicted against observed net radiation using a Random Forest Model at one station in California.
+Figure 4. Predicted against observed net radiation using a Random Forest Model for all stations in California and Arizona.
 </p>
 
 
