@@ -8,11 +8,12 @@ This repository was created for the machine-learning forecasters that predict ne
 * The dataset for model construction was collected from the [CIMIS](https://cimis.water.ca.gov/Default.aspx) and [AZMET](https://cals.arizona.edu/AZMET/) from 1982 to 2018.
 * Extracting [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) reanalysis global climate dataset for forecast validation.
 * Forecasting 7-day net radiation from the running date after automatically extracting weather forecasting information from NWS.
-
-![Map of Radiation Stations](./figs/fig_demo_01.png =250x "Map of Radiation Station")
+<p align="center">
+<img src="./figs/fig_demo_01.png" alt="Map of Radiation Stations" width=300 />
+    <b>Figure 1</b>. Geographical location of observation station
+</p>
 
 ## Running The Forecaster
-
 ```
 import nws_forecast
 from nws_forecast import forecast
@@ -26,10 +27,26 @@ from class_model import model
 my_forecast.export_forecast()
 my_forecast.plot_forecast()
 ```
-## Model Preview
+An expected output is shown below:
+<p align="center">
+<img src="./figs/fig_demo_04.png" alt="Net radiation forecasting" width="400"/>
+    <b>Figure 2</b>. Net radiation forecasting at Merced, CA
+</p>
 
-![Prediction against measurement](./figs/fig_demo_02.png =250x "Prediction against measurement using one model.")
+## Other Model Preview
 
-![Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one station in California](./figs/fig_demo_03.png =250x "Theoretical, predicated, and observed net radiation against time at one location.")
+<p align="center">
+<img src="./figs/fig_demo_03.png" alt="Theoretical, predicated, and observed net radiation against time at one location." width="300"/>
+    <b>Figure 3</b>. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California.
+</p>
 
-![Net radiation forecasting at Merced, CA](./figs/fig_demo_04.png =250x "Net radiation forecasting at one location.")
+<!-- **Figure 3**. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California. -->
+
+<!-- **SUGGESTION**: consider plotting 1:1 format for all sites. -->
+
+<p align="center">
+<img src="./figs/fig_demo_02.png" alt="The prediction against observation of net radiation." width="300"/>
+    <b>Figure 4</b>. Predicted against observed net radiation using a Random Forest Model for all stations in California and Arizona.
+</p>
+
+
