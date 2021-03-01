@@ -10,7 +10,11 @@ This repository was created for the machine-learning forecasters that predict ne
 * Forecasting 7-day net radiation from the running date after automatically extracting weather forecasting information from NWS.
 <p align="center">
 <img src="./figs/fig_demo_01.png" alt="Map of Radiation Stations" width=300 />
+<<<<<<< HEAD
     <b>Figure 1</b>. Geographical location of observation station
+=======
+Figure 1. Geographical location of observation station
+>>>>>>> 2c6631185c46a904f99a68951903cd616e1d5ec5
 </p>
 
 ## Running The Forecaster
@@ -30,13 +34,18 @@ my_forecast.plot_forecast()
 An expected output is shown below:
 <p align="center">
 <img src="./figs/fig_demo_04.png" alt="Net radiation forecasting" width="400"/>
+<<<<<<< HEAD
     <b>Figure 2</b>. Net radiation forecasting at Merced, CA
+=======
+Figure 2. Net radiation forecasting at Merced, CA
+>>>>>>> 2c6631185c46a904f99a68951903cd616e1d5ec5
 </p>
 
 ## Other Model Preview
 
 <p align="center">
 <img src="./figs/fig_demo_03.png" alt="Theoretical, predicated, and observed net radiation against time at one location." width="300"/>
+<<<<<<< HEAD
     <b>Figure 3</b>. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California.
 </p>
 
@@ -47,6 +56,17 @@ An expected output is shown below:
 <p align="center">
 <img src="./figs/fig_demo_02.png" alt="The prediction against observation of net radiation." width="300"/>
     <b>Figure 4</b>. Predicted against observed net radiation using a Random Forest Model for all stations in California and Arizona.
+=======
+</p>
+
+**Figure 3**. Theoretical, predicated, and observed net radiation against time using a Gradient Boosted Tree Model at one location in California.
+
+**SUGGESTION**: consider plotting 1:1 format for all sites.
+
+<p align="center">
+<img src="./figs/fig_demo_02.png" alt="The prediction against observation of net radiation." width="300"/>
+Figure 4. Predicted against observed net radiation using a Random Forest Model for all stations in California and Arizona.
+>>>>>>> 2c6631185c46a904f99a68951903cd616e1d5ec5
 </p>
 
 
